@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Notify Students</title>
+    <link rel="stylesheet" href="notify.css">
+</head>
+<body>
+
+<!-- Navbar -->
+<header class="navbar">
+    <div class="logo">📘 CAMPUS WALLET</div>
+    <div class="nav-links">
+        <a href="librarian.html">Dashboard</a>
+        <div id="show_id">Hello</div>
+        <span class="profile">👤</span>
+    </div>
+</header>
+
+<div class="container">
+
+    <!-- Left Form Section -->
+    <div class="form-section">
+        <h2 style="padding-top: 10px;">Notify Students</h2>
+
+        <form class="form-box" id="form">
+
+            <div class="input-group">
+                <span>🎓</span>
+                <input type="text" placeholder="Roll Number" id="roll_num">
+            </div>
+
+            <div class="input-group" >
+                <span>🪪</span>
+                <input type="text" placeholder="Full Name" id="fname">
+            </div>
+
+            <div class="input-group" >
+                <span>📇</span>
+                <input type="text" placeholder="Library ID" id="card_num">
+            </div>
+
+            <div class="input-group">
+                <span>📖</span>
+                <input type="text" placeholder="Book Name" id="book_name">
+            </div>
+
+            <div class="input-group">
+                <span>👨‍🏫</span>
+                <input type="text" placeholder="Author Name" id="author_name">
+            </div>
+
+            <div class="input-group">
+                <span>🏛</span>
+                <input type="text" placeholder="Fine" id="fine">
+            </div>
+
+            <div class="input-group">
+                <span>🗓️</span>
+                <input type="date" style="opacity: 0.6;" id="date">
+            </div>
+
+            <div class="buttons">
+                <button class="cancel-btn"  type="reset">Cancel</button>
+                <button class="send-btn" type="submit" onclick="storedata()">Send Notification</button>
+            </div>
+            <br>
+            <br>
+            <div style="color: red;opacity:0.8;">
+                *For 1st year student enter only the library card number in the place of roll number
+            </div>
+        </div>
+    </form>
+
+    <!-- Right Image Section -->
+    <div class="image-section">
+        <img src="notify-pic.jpeg" alt="Notification Image">
+    </div>
+
+</div>
+
+</body>
+<script src="notify.js"></script>
+</html>

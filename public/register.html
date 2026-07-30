@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="register.css">
+    <title>Document</title>
+</head>
+<body>
+        <div id="reg-form-container">
+            <form id="reg-form" >
+                 <h1 id="reg-tag"> Registration Form</h1>
+                <label for="fname"><span style="color: red; background-color: transparent;">*</span>First name:&nbsp;<input type="text" id="fname" name="fname" placeholder="firstname" required></label><br><br>
+                <label for="lname"><span style="color: red;background-color: transparent;">*</span>Last name:&nbsp;<input type="text" id="lname" name="lname" placeholder="lastname" required></label><br><br>
+                <label for="lname"><span style="color: red;background-color: transparent;">*</span>Phone Number:&nbsp; <input type="tel" id="phone" name="phone" required></label><br><br>
+                <label for="Occupation">Choose Your occupation</label>
+                <select id="Ocupation" name="occupation_list">
+                <option value="Student" id="student_occupation">Student</option>
+                <option value="Teacher" >Teacher</option>
+                <option value="Librarian">Librarian</option>
+                <option value="Cateen-service">Canteen-service</option>
+                <option value="Xerox">Xerox</option>
+                <option value="Admin">Admin</option>
+                </select>
+                <br><br>
+                <div id="id-give">
+                <div class="inline-group" id="default">
+                    <label for="unique">Enter Your:</label>
+                    <select id="Choose_unique" name="unique-list">
+                        <option value="Roll" id="Roll">Roll</option>
+                        <option value="Unique-id" id="Unique_id" >Teacher-id_num</option>
+                    </select>
+                    <input type="text" id="unique_number" name="unique_num" required>
+                </div>
+                <div id="default_visible" ><p id="User_id"></p>
+                </div>
+                </div>
+                <br>
+                <label for="password">Enter the password:&nbsp;<input type="text" id="password" name="password" placeholder="* * * * * * * *"></label>
+                <br>
+                <div class="form-footer">
+                    <button type="submit" onclick="sendData()">Register</button>
+                    <a href="login.html">Already registered?</a>
+                </div>
+            </form>
+            <div id="reg-pic"></div>
+        </div>
+</body>
+<script src="\register.js"></script>
+</html>

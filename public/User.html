@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Campus Wallet</title>
+    <link rel="stylesheet" href="User.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="logo">
+            <div class="logo-box">#</div>
+            <h2>CAMPUS WALLET</h2>
+        </div>
+
+        <nav>
+            <a href="homepage.html" class="active">Dashboard</a>
+            <a href="wallet_mainpage.html">Wallet</a>
+            <a href="#">Scanner</a>
+            <a href="historyUser.html">Transaction History</a>
+        </nav>
+
+        <div class="icons">
+             <button class="notification-button" onclick="openSidebar()" style="border:none;background-color: transparent; font-size: large;">
+                🔔 Notifications
+            </button>
+            <div id="show_id">Hello</div>
+           <button class="profile"  id="openPanelBtn" >👤</button>
+        </div>
+    </header>
+<div class="slide-panel" id="slidePanel">
+    <div class="panel-header">
+        <h3>Your Profile </h3>
+        <button id="closePanelBtn">✖</button>
+    </div>
+<div id="notificationSidebar" class="sidebar">
+    <div class="sidebar-header">
+        <h3>Notifications</h3>
+        <button onclick="closeSidebar()">✖</button>
+    </div>
+
+    <div id="notificationList" class="notification-list" onclick="shownofication()" style="height: 500px;width: auto;">
+        <!-- Notifications will be added here -->
+    </div>
+</div>
+    <div class="panel-content">
+        <div id="profile_contain">
+        <div id="Profile_image"></div>
+        <div id="Name" class="profile"><span>Your name : </span>Your name</div>
+        <div id="unique_id" class="profile"><span>Your Id: </span> Your id</div>
+        <div id="Ph_number" class="profile"><span>Phone Number: </span>Phone number</div>
+        </div>
+    </div>
+</div>
+    <!-- Cards Section -->
+    <section class="cards-container">
+
+        <div class="card">
+            <a href="userCanteen.html"><img src="canteen-pic.jpg" alt="Canteen"></a>
+            <br>
+            <a href="userCanteen.html"><button>Canteen</button></a>
+            
+        </div>
+
+        <div class="card">
+            <a href="#"><img src="user_library_pic.jpg" alt="Library"></a>
+            <br>
+            <a href="userLibrary.html"><button>Library</button></a>
+            
+        </div>
+
+        <div class="card">
+            <a href="userXerox.html"><img src="Xerox-pic.jpg" alt="Xerox"></a>
+            <br>
+            <a href="userXerox.html"><button>Xerox</button></a>
+            
+        </div>
+    </section>
+</body>
+<script src="user.js"></script>
+</html>

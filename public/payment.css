@@ -1,0 +1,111 @@
+/* Background */
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    height: 100vh;
+
+    background: linear-gradient(135deg,
+            #7a3fe0,
+            #6f8fd8,
+            #4ec5c1);
+
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 25px;
+    color: black;
+}
+
+.logo {
+    font-weight: bold;
+}
+
+.fit {
+    background: white;
+    padding: 3px 6px;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+
+/* Center layout */
+
+.center {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Card */
+
+.card {
+    background: #eee;
+    padding: 60px;
+    border-radius: 15px;
+
+    width: 650px;
+    min-height: 300px;
+
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* Amount box */
+
+.amount-box {
+    background: #b6cfdb;
+    padding: 15px;
+    border-radius: 25px;
+    font-weight: bold;
+
+    margin-bottom: 100px; /* 👈 buttons নিচে নামাবে */
+}
+
+/* Buttons layout — side by side */
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+/* Buttons */
+
+button {
+    border: none;
+    padding: 25px 30px;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 30%;
+    transition: 0.3s;
+}
+
+/* Button colors */
+
+.upi {
+    background: linear-gradient(45deg, #6c3dbb, #9a6be3);
+}
+
+.wallet {
+    background: linear-gradient(45deg, #ff8b8b, #ffd1a6);
+}
+
+.credit {
+    background: linear-gradient(45deg, #7da2d8, #c1a7e2);
+}
+
+/* Hover effect */
+
+button:hover {
+    opacity: 0.85;
+    transform: scale(1.05);
+}

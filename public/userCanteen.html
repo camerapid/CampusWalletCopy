@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Campus Wallet Dashboard</title>
+
+<link rel="stylesheet" href="userCanteen.css">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<!-- Top Navbar -->
+<header class="navbar">
+    <div class="logo">
+        <div class="circle">FIT</div>
+        <span>Campus Wallet</span>
+    </div>
+
+    <div class="nav-right">
+        <a href="canteen-service.html">Dashboard</a>
+        <a href="#"><i class="fa-solid fa-bell"></i></a>
+        <a href="#"><i class="fa-regular fa-user"></i></a>
+    </div>
+</header>
+
+<div class="main-container">
+
+<!-- Left Panel -->
+<div class="left-panel">
+    <h1>DASHBOARD</h1>
+
+    <div class="canteen-img">
+        <img src="canteen-pic.jpg">
+    </div>
+
+    <button class="qr-btn">
+        <i class="fa-solid fa-mobile-screen"></i> QR Scanner
+    </button>
+    <div>
+        <br>
+    <B> Call:</B>
+     9110098732
+    </div>
+    <a href="student.html" class="back-link">&lt;Back</a>
+</div>
+
+<!-- Right Panel -->
+<div class="right-panel">
+
+<div class="top-cards">
+
+<div class="card">
+<i class="fa-solid fa-receipt"></i>
+<a href="#"><span>Transaction History</span></a>
+</div>
+
+<div class="card">
+<i class="fa-solid fa-wallet"></i>
+<a href="#"><span>Wallet</span></a>
+</div>
+
+<div class="card status-card">
+<div>
+<span>Canteen Status</span>
+</div>
+<button class="open-btn">#</button>
+</div>
+
+</div>
+
+<h2>Today’s Menu</h2>
+
+<table id="studentTable">
+<thead>
+<tr>
+<th>Menu</th>
+<th>Cost</th>
+<th>Quantity</th>
+<th>Picking time</th>
+<th>Order</th>
+</tr>
+</thead>
+
+<tbody>
+</tbody>
+</table>
+
+</div>
+</div>
+
+<!-- ================= SCRIPT ================= -->
+
+<script>
+
+window.onload = function(){
+
+fetch("/showMenu")
+.then(res => res.json())
+.then(data => {
+
+const tableBody = document.querySelector("#studentTable tbody");
+tableBody.innerHTML = "";
+
+data.forEach(item => {
+
+const row = document.createElement("tr");
+
+const tdItem = document.createElement("td");
+tdItem.textContent = item.items;
+
+const tdCost = document.createElement("td");
+tdCost.textContent = item.price;
+
+const tdQty = document.createElement("td");
+const qtyInput = document.createElement("input");
+qtyInput.type = "number";
+qtyInput.min = "1";
+qtyInput.id = `qty-${item.id}`;
+tdQty.appendChild(qtyInput);
+
+const tdTime = document.createElement("td");
+const timeInput = document.createElement("input");
+timeInput.type = "text";
+timeInput.placeholder = "1:00 PM";
+tdTime.appendChild(timeInput);
+
+const tdBtn = document.createElement("td");
+const orderBtn = document.createElement("button");
+orderBtn.textContent = "ORDER";
+
+orderBtn.addEventListener("click", ()=>{
+orderItem(item.items, item.price, `qty-${item.id}`);
+});
+
+tdBtn.appendChild(orderBtn);
+
+row.appendChild(tdItem);
+row.appendChild(tdCost);
+row.appendChild(tdQty);
+row.appendChild(tdTime);
+row.appendChild(tdBtn);
+
+tableBody.appendChild(row);
+
+});
+
+})
+.catch(err => console.log("Fetch error:",err));
+
+};
+
+
+function orderItem(menu_item, menu_cost, menu_id){
+const randomString = Math.random().toString(36).substring(2, 10);
+console.log(randomString); 
+let quant = document.getElementById(menu_id).value;
+
+const data = {
+uid:"908172",
+menuitem: menu_item,
+cost: menu_cost,
+quantity: quant,
+code:randomString
+};
+console.log(data);
+
+fetch("/saveCode",{
+method:"POST",
+headers:{"Content-Type":"application/json"},
+body:JSON.stringify({data})
+})
+.then(res=>res.json())
+.then(data_back=>{
+console.log(data_back.message);
+alert("Order Sent ✅");
+})
+.catch(err=>console.log("Order error:",err));
+
+}
+
+</script>
+
+</body>
+</html>

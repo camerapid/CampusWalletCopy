@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Upload Menu</title>
+    <link rel="stylesheet" href="uploadMenu.css">
+</head>
+<body>
+
+<a href="Canteen-service.html" class="back-btn">&lt;Back</a>
+
+<div class="container">
+
+    <!-- Left Menu Section -->
+    <div class="menu-box" id="menu_box">
+        <h1>MENU</h1>
+
+        <div class="menu-item">
+            <span>Veg Rice plate</span>
+            <div class="circle"></div>
+        </div>
+
+        <div class="menu-item">
+            <span>Egg Rice plate</span>
+            <div class="circle"></div>
+        </div>
+
+        <div class="menu-item">
+            <span>Fish Rice plate</span>
+            <div class="circle"></div>
+        </div>
+
+        <div class="menu-item">
+            <span>Chicken Rice plate</span>
+            <div class="circle"></div>
+        </div>
+
+        <div class="menu-item">
+            <span>Chicken Burger</span>
+            <div class="circle"></div>
+        </div>
+
+        <div class="menu-item">
+            <span>Veg Sandwitch</span>
+            <div class="circle"></div>
+        </div>
+
+        <div class="menu-item">
+            <span>Chicken Sandwitch</span>
+            <div class="circle"></div>
+        </div>
+        
+        <div class="menu-item">
+            <span>Veg Chawmin</span>
+            <div class="circle"></div>
+        </div>
+
+        <div class="menu-item">
+            <span>Egg Chawmin</span>
+            <div class="circle"></div>
+        </div>
+
+        <div class="menu-item">
+            <span>Chicken Chawmin</span>
+            <div class="circle"></div>
+        </div>
+
+        <div class="menu-item">
+            <span>Egg Chicken Chawmin</span>
+            <div class="circle"></div>
+        </div>
+
+        <div class="menu-item">
+            <span>Dahi Vada</span>
+            <div class="circle"></div>
+        </div>
+
+        <div class="menu-item">
+            <span>Chicken wings</span>
+            <div class="circle"></div>
+        </div>
+
+        <div class="menu-item">
+            <span>Chicken Breast</span>
+            <div class="circle"></div>
+        </div>
+
+        <div class="menu-item">
+            <span>Chicken Pakada</span>
+            <div class="circle"></div>
+        </div>
+        <div id="add_menu">
+            <form class="menu-item">
+            <input type="text" placeholder="Enter new item" style="border-radius: 10px;"> 
+            <input type = "number" placeholder="Enter the cost"  style="border-radius: 10px;"> 
+            <button type="submit"  style="border-radius: 10px;" onclick="addItem()">Add</button>
+            </form>
+        </div>
+        <button class="add-btn"  id="add-btn" onclick="add()"> Add a New Item to Menu
+
+        </button>
+    </div>
+
+    <!-- Right Section -->
+    <div class="selected-box">
+        <h1 id="Current-Menu">SELECTED MENU<hr width="1px" height="15px"></h1>
+        <div id="selections"></div>
+        <div class="menu-item" id="confirm_update" >Items Live</div>
+        <button id='publish' >Add to Todays List</button>
+        
+
+    </div>
+
+</div>
+
+<script>
+    let Items='';
+    let itemList=[];
+    
+    let count=0;
+    if (Items==''){
+        document.getElementById('selections').innerHTML='  Please Choose Todays Items  ~',
+        //document.getElementById('selections').style.color='',
+        document.getElementById('selections').style.fontSize='25px';
+    }
+    
+    const circles = document.querySelectorAll(".circle");
+    
+    circles.forEach(circle => {
+        circle.addEventListener("click", function (event) {
+            event.stopPropagation(); // prevents parent click
+            this.classList.toggle("selected-circle");
+            document.getElementById("confirm_update").style.display='none';
+            let itemName = this.parentElement.querySelector("span").innerText;
+            count+=1;
+            if (itemList.includes(itemName) ){
+                let tempList=[];
+                console.log("Already selected");
+                for (let i = 0 ;i < itemList.length ; i++)
+                {
+                    if (itemList[i]!== itemName)
+                    {
+                        tempList.push(itemList[i]);
+                    }
+                }
+                itemList=tempList;
+                
+                document.getElementById('selections').innerHTML=itemList.map(Items => ` <b>○ &nbsp &nbsp </b>${Items}<br> <hr color='black'  width=70%>`).join("");
+                console.log(itemList);
+            }
+            else{
+                itemList.push(itemName);
+               // Items+=" <b>○ &nbsp &nbsp </b>"+itemName+"<br> <hr color='black'  width=70%>";
+                document.getElementById('selections').innerHTML=itemList.map(Items => ` <b>○ &nbsp &nbsp </b>${Items}<br> <hr color='black'  width=70%>`).join("");
+
+            }
+        });
+    });
+    function add(){
+        console.log("abbc");
+        let newItem="you";
+        document.getElementById("add_menu").style.display = "block";
+
+    }
+
+    function addItem(){
+        document.getElementById('add-btn').innerHTML='<button class="add-btn" >Add a New Item to Menu</button>';
+        
+        document.getElementById("add_menu").style.display = "none";
+    }
+    const publish=document.getElementById("publish");
+    publish.addEventListener("click",save);
+    function save(){
+        fetch("http://localhost:3000/save",{
+            method:"POST",
+            headers:{"Content-Type":"application/json"},
+            body:JSON.stringify({itemList:itemList})
+        })
+        .then(res=>res.json())
+        .then(data => 
+        {
+            console.log(data);
+        }
+
+        )
+        alert("  The Existing List of Menu is Replaced By The New List ");
+        document.getElementById("confirm_update").style.display='block';
+        //document.getElementById('Current-Menu').innerHTML='LIVE MENU';
+        
+
+    }
+</script>
+
+</body>
+</html>

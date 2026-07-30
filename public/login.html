@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+
+<div class="container">
+
+    <div class="login-card">
+
+        <!-- Left Form -->
+        <div class="left">
+            <h2>Login</h2>
+
+            <label>User ID</label>
+            <input type="text" placeholder="Enter User ID" id = "userid">
+            <div id="choice">
+            <input type="radio" id="phone_number" name="choice" value="phone_number">
+            <label for="phone_number" style="padding-right: 50px;"> Phone number</label>
+            <input type="radio" id="login_id" name="choice" value="login" >
+            <label for="login_id">id</label>
+            </div>
+            <br>
+            <label>Password</label>
+            <input type="password" placeholder="Enter Password" id="password">
+            <p class="forgot">Forgot password?</p>
+
+            <button onclick="sendData()">Login</button>
+        </div>
+
+        <!-- Right Image -->
+        <div id="login-pic">
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+<script src="login.js"></script>
+</html>

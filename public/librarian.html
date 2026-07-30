@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Library Dashboard</title>
+    <link rel="stylesheet" href="librarian.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+    <div class="logo">📘 CAMPUS WALLET</div>
+
+    <div class="nav-links">
+        <a href="homepage.html" class="active">Dashboard</a>
+        <div id="show_id">Hello</div>
+        <button class="profile-icon"  id="openPanelBtn" >👤</button>
+    </div>
+</header>
+ 
+<div class="slide-panel" id="slidePanel">
+    <div class="panel-header">
+        <h3>Your Profile </h3>
+        <button id="closePanelBtn">✖</button>
+    </div>
+
+    <div class="panel-content">
+        <div id="profile_contain">
+        <div id="Profile_image"></div>
+        <div id="Name" class="profile"><span>Your name : </span>Your name</div>
+        <div id="unique_id" class="profile"><span>Your Id: </span> Your id</div>
+        <div id="Ph_number" class="profile"><span>Phone Number: </span>Phone number</div>
+        </div>
+    </div>
+</div>
+<div class="container">
+
+    <!-- LEFT SIDEBAR -->
+    <aside class="sidebar">
+        <div class="library-banner" id="image_container">
+        </div>
+
+        <button class="sidebar-btn upload" id="update_list">
+            📤 Remove Students already submitted fine
+        </button>
+        <a href="notifyhistory.html"><button class="sidebar-btn upload">
+            Notify History
+        </button></a>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <h1>Library Dashboard</h1>
+
+        <!-- DASHBOARD CARDS -->
+        <div class="cards">
+
+            <div class="card">
+                💳 Wallet 
+            </div>
+
+            <div class="card">
+                <a href="notify.html">⏳ Notify Students</a>
+            </div>
+
+            <a href="historyLibrary.html"><div class="card" >
+                💰 Transactions
+            </div></a>
+
+        </div>
+
+        <!-- RECENT SECTION -->
+        <div class="student-section">
+            <div class="section-header">
+                <h2>Recently Notified</h2>
+                
+            </div>
+            <div class="list-container" id="show_studentlist">
+                        <table id="libraryTable">
+                        <thead>
+                            <tr>
+                                <th>Roll Number</th>
+                                <th>Name</th>
+                                <th>Book</th>
+                                <th>Author Name</th>
+                                <th>Fine</th>
+                                <th>Return Date</th>
+                                <th>Fine Status</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                        </table>
+
+                    </div>
+            <br>
+        </div>
+
+    </main>
+
+</div>
+</body>
+<script src="librarian.js"></script>
+</html>

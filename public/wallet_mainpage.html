@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Recharge Wallet</title>
+    <link rel="stylesheet" href="wallet_mainpage.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="logo">
+            <div class="logo-circle">FIT</div>
+            <span>Campus Wallet</span>
+        </div>
+
+        <div class="profile">
+            <a href="#">Back</a>
+        </div>
+    </header>
+
+    <!-- Main Card -->
+    <section class="main-container">
+
+        <div class="card">
+
+            <!-- Left Section -->
+            <div class="left-section">
+
+                <div class="title-box">
+                    <h2>RECHARGE WALLET</h2>
+                </div>
+
+                <div class="button-group">
+                    <input type="number" placeholder="₹ Enter amount" id="amount" style="text-align: center;">
+                    <button class="btn"  onclick="generateQR()">PAY BY QR</button>
+                </div>
+
+                <img id="qrImage" width = "250">
+
+            </div>
+
+            <!-- Right Section -->
+            <div class="right-section">
+                <h2>TOTAL<br>BALANCE</h2><br>
+                 <div id = "showbalance" style="font-size: large;font-weight: bold;"></div>
+                <div class="emoji">😎</div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</body>
+<script src="wallet_mainpage.js"></script>
+</html>

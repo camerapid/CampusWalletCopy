@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Campus Wallet</title>
+    <link rel="stylesheet" href="Payment.css">
+</head>
+
+<body>
+
+<header>
+    <div class="logo">
+        <span class="fit">FIT</span> Campus Wallet
+    </div>
+
+    <div class="profile">👤</div>
+</header>
+<h1 style="text-align: center">PAYING TO <span id="vendor">Canteen</span></h1>
+<div class="center">
+    
+    <div class="card">
+
+        <div class="amount-box">
+           ENTER THE AMOUNT:<input type="number" id="Amount"> 
+        </div>
+
+        <div class="buttons">
+            <button class="upi" id="UPI" onclick="amount(id)">UPI</button>
+         <div style="display: flex;justify-content: center;align-items: center; flex-direction: column;height: 100px;width: 300px;display: none;" id="Enterwithqr">
+            <div class="button-group" style="display: flex;justify-content: center;align-items: center;background-color: bisque;height: 200px;" >
+                    <button class="btn"  onclick="generateQR()" style="width: 150px;height: 100px;text-align: center;">PAY BY QR</button>
+                </div>
+
+                <img id="qrImage" width = "250">
+            </div>
+            <button class="wallet" id="Wallet" onclick="amount(id)">WALLET</button>
+            <button class="credit" id="Credit Point" onclick="amount(id)">CREDIT POINT</button>
+
+        </div>
+        <div id="Status"></div>
+
+    </div>
+    
+
+</div>
+
+<script>
+    
+    function amount(Mode){
+        let TrData={};
+        if(Mode == "UPI")
+        {
+            document.getElementById("UPI").style.display = "none";
+            document.getElementById("Enterwithqr").style.display = "block";
+            
+        }
+        Amount=document.getElementById("Amount").value;
+        console.log("Amount: "+Amount+"  Mode:"+Mode);
+        TrData.Mode=Mode;
+        TrData.Amount=Amount;
+        TrData.Reciever=document.getElementById("vendor").innerText;
+        TrData.Sender="That Guy";
+
+        fetch("http://localhost:3000/recordTransaction",{
+            method:"POST",
+            headers:{"Content-Type":"application/json"},
+            body:JSON.stringify({TrData:TrData})
+            })
+            .then(res=>res.json())
+            .then(data => 
+            {
+                console.log(data);
+                if(Mode != "UPI")
+        {
+            document.getElementById("Status").innerHTML=`<br><hr width="50%">${data}<hr width="50%">`;
+            
+        }
+                
+            }
+
+            )
+    }
+    function generateQR() {
+    let amount = document.getElementById("Amount").value;
+
+    let upiID = "rudranil5@pnb";  // 🔁 Replace with your UPI ID
+    let name = "CampusWallet";
+
+    let upiString = `upi://pay?pa=rudranil5@pnb&pn=NAME&am=${amount}&cu=INR`;
+
+    let qrURL = "https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=" 
+                + encodeURIComponent(upiString);
+
+    document.getElementById("qrImage").src = qrURL;
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Wallet - Canteen Dashboard</title>
+    <link rel="stylesheet" href="Canteen-service.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <div class="logo-icon">S</div>
+                <h1>CAMPUS WALLET</h1>
+            </div>
+            <nav class="nav">
+
+                <a href="canteen-service.html" class="nav-link">Dashboard</a>
+                <a href="#" class="nav-link">QR</a>
+                <a href="#" class="nav-link">settings</a>
+                <div class="notification-icon">🔔</div>
+                <button class="profile"  id="openPanelBtn" >👤</button>
+            </nav>
+        </header>
+       <!-- <div class="slide-panel" id="slidePanel">
+    <div class="panel-header">
+        <h3>Your Profile </h3>
+        <button id="closePanelBtn">✖</button>
+    </div>
+       <div class="panel-content">
+        <div id="profile_contain">
+        <div id="Profile_image"></div>
+        <div id="Name" class="profile"><span>Your name : </span>Your name</div>
+        <div id="unique_id" class="profile"><span>Your Id: </span> Your id</div>
+        <div id="Ph_number" class="profile"><span>Phone Number: </span>Phone number</div>
+        </div>
+    </div> -->
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Sidebar -->
+            <aside class="sidebar">
+
+
+                <div class="canteen-card">
+    <img src="Canteen-service.jpg" alt="Canteen">
+</div>
+
+
+
+                
+                <div class="menu-items">
+                    <a href="upload_menu.html"><button class="menu-item">
+                        <span class="menu-icon">☁️</span>
+                        <span>Upload Menu</span>
+                    </button></a>
+                    <button class="menu-item">
+                        <span class="menu-icon">⏰</span>
+                        <span>Set Active Time</span>
+                    </button>
+                    <button class="menu-item">
+                        <span class="menu-icon">🕐</span>
+                        <span>Transaction History</span>
+                    </button>
+                    <a href="Canteen-orderHistory.html"><button class="menu-item">
+                        <span class="menu-icon">📱</span>
+                        <span>Order History</span>
+                    </button></a>
+                </div>
+            </aside>
+
+            <!-- Center Content -->
+            <section class="center-content">
+                <div class="prebooking-section">
+                    <div class="section-header">
+                        <h2>📋 Pre-booking List</h2>
+                        <div class="header-controls">
+                            
+                        </div>
+                    </div>
+
+                    <div class="table-container">
+                        <table class="bookings-table">
+                            <thead>
+                                <tr>
+                                    <th>User ID</th>
+                                    <th>Item</th>
+                                    <th>Quantity</th>
+                                    <th>Order Time</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody id="bookings-tbody">
+                                <!-- Sample data - will be replaced by database data -->
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                
+
+
+            </section>
+
+            <!-- Right Sidebar -->
+            <aside class="right-sidebar">
+
+
+
+   
+    
+        <!-- <div class="order-stats clickable-card">
+            <div class="stats-header">
+                <div>📊 Order Stats</div>
+            </div> -->
+ <!-- Order Stats Clickable -->
+    <!-- <a href="#" class="card-link">
+            <div class="stats-content">
+                <div class="stat-item">
+                    <div class="stat-label">Today's Orders</div>
+                    <div class="stat-value"></div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">Today's Sales</div>
+                    <div class="stat-value"></div>
+                </div>
+            </div> -->
+
+            
+        </div>
+    </a>
+
+    
+        <div class="payment-requests clickable-card">
+            <div class="card-header">
+                <span>💼 Payment Requests</span>
+
+         <!-- Payment Requests Clickable -->
+    <a href="#" class="card-link">
+
+                <span class="view-link">view</span>
+            </div>
+
+       
+            <div class="request-count">
+                <span class="icon">👥</span>
+                <span class="count"></span>
+            </div>
+        </div>
+    </a>
+
+    <div class="view-more">
+        <a href="#">View More ></a>
+    </div>
+
+</aside>
+
+
+
+        </div>
+    </div>
+
+    <script type="module" src="dashboard.js"></script>
+</body>
+</html>

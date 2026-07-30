@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Wallet - Canteen Transcation History</title>
+    <link rel="stylesheet" href="Canteen-service.css">
+</head>
+<hr>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <div class="logo-icon">S</div>
+                <h1>CAMPUS WALLET</h1>
+            </div>
+            <nav class="nav">
+
+                <a href="canteen-service.html" class="nav-link">Dashboard</a>
+                <a href="#" class="nav-link">QR</a>
+                <a href="#" class="nav-link">settings</a>
+                <div class="notification-icon">🔔</div>
+                <button class="profile"  id="openPanelBtn" >👤</button>
+            </nav>
+        </header>
+        <hr>
+        <br>
+        
+          <!-- Center Content -->
+            <section class="center-content">
+                <div class="prebooking-section">
+                    <div class="section-header">
+                        <h2>📋 Orders Cancelled or Served</h2>
+                        <div class="header-controls">
+                            
+                        </div>
+                    </div>
+
+                    <div class="table-container">
+                        <table class="bookings-table">
+                            <thead>
+                                <tr>
+                                    <th>DATE </th>
+                                    <th>User ID</th>
+                                    <th>Item</th>
+                                    <th>Quantity</th>
+                                    <th>Pickup Time</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody id="bookings-tbody">
+                                <!-- Sample data - will be replaced by database data -->
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </section>
+    </div>
+
+<script>
+window.onload=showOrderHistory;
+function showOrderHistory(){
+    fetch ("/showOrderHistory")
+    .then(res=>res.json())
+    .then(data => {
+    
+        const tableBody=document.querySelector(".bookings-table tbody");
+
+        data.forEach(item =>{
+            const row= document.createElement("tr");
+            console.log("Here is - ",data);
+            
+            const tuid=document.createElement("td");
+            tuid.textContent=item.id;
+            const titems=document.createElement("td");
+            titems.textContent=item.item;
+            const tquantity=document.createElement("td");
+            tquantity.textContent=item.quantity;
+            const tcode=document.createElement("td");
+            tcode.textContent=item.code;
+            const tstatus=document.createElement("td");
+            tstatus.textContent=item.status;
+            const tdate=document.createElement("td");
+            tdate.textContent=item.date;
+
+            row.appendChild(tdate);
+            row.appendChild(tuid);
+            row.appendChild(titems);
+            row.appendChild(tquantity);
+            row.appendChild(tcode);
+            row.appendChild(tstatus);
+            
+            tableBody.appendChild(row);
+            
+        });
+    })
+        .catch(err=>console.log("Cant show orders due to - ",err));
+        
+        
+};
+
+</script>
+</body>
+</html>

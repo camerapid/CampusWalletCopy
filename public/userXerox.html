@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Campus Wallet - Xerox</title>
+    <link rel="stylesheet" href="userXerox.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="logo">
+            <div class="logo-circle">FIT</div>
+            <span>Campus Wallet</span>
+        </div>
+
+        <nav class="nav-links">
+            <a href="homepage.html">Homepage</a>
+        </nav>
+
+        <div class="nav-icons">
+            
+            <div class="status-indicator" id="status_indicator">
+            Open
+            </div>
+            <a href="#"><i class="fa-solid fa-bell" style="padding-right: 10px;"></i></a>
+            <div id="show_id">Hello</div>
+           <button class="profile"  id="openPanelBtn" >👤</button>
+        </div>
+        </div>
+    </header>
+<div class="slide-panel" id="slidePanel">
+    <div class="panel-header">
+        <h3>Your Profile </h3>
+        <button id="closePanelBtn">✖</button>
+    </div>
+
+    <div class="panel-content">
+        <div id="profile_contain">
+        <div id="Profile_image"></div>
+        <div id="Name" class="profile"><span>Your name : </span>Your name</div>
+        <div id="unique_id" class="profile"><span>Your Id: </span> Your id</div>
+        <div id="Ph_number" class="profile"><span>Phone Number: </span>Phone number</div>
+        </div>
+    </div>
+</div>
+    <!-- Main Section -->
+    <div class="main-container">
+
+        <!-- Left Section -->
+        <div class="left-section">
+            <h1>DASHBOARD</h1>
+            <img src="user-xerox-pic.jpg" alt="Xerox Machine" class="xerox-img">
+            
+            <a href="student.html"><button class="back-btn">BACK</button></a>
+        </div>
+
+        <!-- Right Section -->
+        <div class="right-section">
+            
+            <div class="message-box">
+                <input type="text" placeholder="Your Message (If Any)" style="height: 50px;text-align: center;border-radius: 15px;" id="enter_meesage">
+            </div>
+
+            <form class="action-buttons">
+                <button class="whatsapp-btn" >
+                    <a href="https://web.whatsapp.com/"><i class="fa-brands fa-whatsapp"></i></a>
+                </button>
+
+                <button class="send-doc-btn">
+                    <div>Send <br> Document</div>
+                </button>
+
+                <button class="play-btn"  id="whatsapp_button" type="submit">
+                    <i class="fa-solid fa-play"></i>
+                </button>
+            </form>
+
+        </div>
+
+    </div>
+
+</body>
+<script src="userXerox.js"></script>
+</html>

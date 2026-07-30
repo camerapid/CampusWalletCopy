@@ -1,0 +1,92 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, sans-serif;
+}
+
+body{
+    height:100vh;
+    background:#3a7fa8;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.login-card{
+    width:1000px;
+    height:400px;
+    background:white;
+    border-radius:20px;
+    display:flex;
+    overflow:hidden;
+    box-shadow:0 15px 35px rgba(0,0,0,0.2);
+}
+
+/* LEFT SIDE */
+.left{
+    width:60%;
+    padding:40px;   /* reduced from 70px */
+    background:#f3f3f3;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+
+.left h2{
+    font-size:34px;
+    margin-bottom:25px;
+}
+
+.left label{
+    font-weight:bold;
+    color:#555;
+    width:85%;
+}
+
+.left input{
+    width:85%;
+    padding:12px;
+    margin:8px 0 18px;
+    border:1px solid #ccc;
+    border-radius:10px;
+}
+
+.forgot{
+    text-align:right;
+    width:85%;
+    color:#777;
+    margin-bottom:20px;
+}
+
+.left button{
+    width:50%;
+    padding:12px;
+    border:none;
+    border-radius:30px;
+    background:#3a7fa8;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+}
+
+/* RIGHT IMAGE */
+#login-pic{
+    width:40%;
+    height:100%;
+    background-image:url("login-pic.jpg");
+    background-size:cover;
+    background-position:center;
+}
+#choice 
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+

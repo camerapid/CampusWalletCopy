@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Campus Wallet Dashboard</title>
+    <link rel="stylesheet" href="userLibrary.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Top Navbar -->
+    <header class="navbar">
+        <div class="logo">
+            <div class="logo-circle">FIT</div>
+            <span>Campus Wallet</span>
+        </div>
+       
+        <div class="nav-right">
+            <a href="#" class="dashboard-link">Dashboard</a>
+            <div id="show_id">Hello</div>
+            
+           <button class="profile"  id="openPanelBtn" >👤</button>
+        </div>
+    </header>
+
+    <div class="slide-panel" id="slidePanel">
+    <div class="panel-header">
+        <h3>Your Profile </h3>
+        <button id="closePanelBtn">✖</button>
+    </div>
+
+    <div class="panel-content">
+        <div id="profile_contain">
+        <div id="Profile_image"></div>
+        <div id="Name" class="profile"><span>Your name : </span>Your name</div>
+        <div id="unique_id" class="profile"><span>Your Id: </span> Your id</div>
+        <div id="Ph_number" class="profile"><span>Phone Number: </span>Phone number</div>
+        </div>
+    </div>
+</div>
+
+
+
+    <!-- Main Section -->
+    <main class="main-container">
+
+        <div class="content">
+
+            <!-- Left Image Section -->
+            <div class="image-section">
+                <img src="user-library-pic-click.jpg" alt="Library Image">
+                <br>
+                 <a href="User.html"><button class="back-btn">BACK</button></a>
+            </div>
+
+            <!-- Right Menu Section -->
+            <div class="menu-section">
+
+                
+
+                <a href="checkbalance.html"><div class="menu-item">
+                    <i class="fa-solid fa-wallet"></i>
+                    <span>Wallet</span>
+                </div></a>
+
+                <a href="historyUser.html">
+                <div class="menu-item">
+                    <i class="fa-solid fa-file-invoice-dollar"></i>
+                    <span>Transaction History</span>
+                </div></a>
+
+                <div id="Issue-book">
+                <div class="menu-item">
+                    <i class="fa-solid fa-book-open"></i>
+                    <!--<span>Issued Book</span>-->
+                    <input type="text" placeholder="Enter book name" style="border-style: none; height: 50px;" id="book_name">
+                </div>
+                <form>
+                 <div class="menu-item">
+                    
+                    <input type="date" placeholder="Expected return date" style="border-style: none;height: 50px;" id="expected_return_date">
+                </div>
+                </div>
+
+                <button class="reminder-btn" type="submit" id="set_reminder">Set Reminder</button>
+                <a href="paynow.html" ><div style="background-color: rgb(214, 173, 252);height: 30px;border-radius: 5px;width: 80px;text-align: center;border-style: solid;border-width: 5px;border-color: rgb(70, 70, 70);">Pay Now</div></a>
+
+            </div>
+            </form>
+
+        </div>
+
+    </main>
+</body>
+<script src="userLibrary.js"></script>
+</html>

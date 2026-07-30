@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xerox Dashboard</title>
+    <link rel="stylesheet" href="xerox.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="logo">
+            <span class="logo-box">A</span>
+            <span class="brand">CAMPUS WALLET</span>
+        </div>
+
+        <div class="nav-links">
+            <a href="homepage.html" class="active">Homepage</a>
+            <a href="#">🔔</a>
+           <div id="show_id">Hello</div>
+        <button class="profile-icon"  id="openPanelBtn" >👤</button>
+        </div>
+    </div>
+<div class="slide-panel" id="slidePanel">
+    <div class="panel-header">
+        <h3>Your Profile </h3>
+        <button id="closePanelBtn">✖</button>
+    </div>
+
+    <div class="panel-content">
+        <div id="profile_contain">
+        <div id="Profile_image"></div>
+        <div id="Name" class="profile"><span>Your name : </span>Your name</div>
+        <div id="unique_id" class="profile"><span>Your Id: </span> Your id</div>
+        <div id="Ph_number" class="profile"><span>Phone Number: </span>Phone number</div>
+        </div>
+    </div>
+</div>
+    <!-- Main Container -->
+    <div class="main-container">
+
+        <!-- Left Sidebar -->
+        <div class="sidebar">
+
+            <div class="image-box">
+                <img src="Xerox.jpeg" alt="Computer Image">
+            </div>
+            <div id="button_history">
+            <button class="side-btn" id="active_time">⏰ close</button>
+            <button class="side-btn"><a href="historyXerox.html">🔄 Transaction History</a></button>
+             <button class="side-btn" id="print_list_history"> Print List History</button>
+             </div>
+            <div class="qr-box">
+                <div class="qr"></div>
+            </div>
+
+            <a href="#"><div class="side-btn">📱 QR Code</div></a>
+
+        </div>
+
+        <!-- Right Content -->
+        <div class="content">
+
+            <h1>Xerox Dashboard</h1>
+            <div id="remove"><h2 class="print-link" >View Print List</h2><button>Remove printed</button></div>
+            <div class="large-box" id="large_box">
+                <div class="list-container" id="show_studentlist">
+                        <table id="libraryTable">
+                        <thead>
+                            <tr>
+                                <th>Roll Number</th>
+                                <th>Name</th>
+                                <th>Phone Number</th>
+                                <th>Message</th>
+                                <th>Printing Status</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                        </table>
+
+                    </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+<script src="Xerox.js"></script>
+</html>

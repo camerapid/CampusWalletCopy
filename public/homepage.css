@@ -1,0 +1,104 @@
+*
+{
+    background-color: rgb(228, 236, 243);
+}
+#leftside
+{
+    margin-top: 10px;
+    margin-left: 10px;
+    height: 50px;
+    width: 150px;
+    display: flex;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+}
+#logo
+{
+  width: 60px;
+  background-image: url("logo.jpg");
+  background-size: cover; 
+  background-repeat: no-repeat; 
+  background-position: center;
+  height: 50px;
+  margin-right: 5px;
+}
+#webname
+{
+    width: 120px;
+    text-align: center;
+    height: 30px;
+    font-weight: bolder;
+}
+#center
+{
+    height: 500px;
+    width: 80%;
+    margin-left: 150px;
+    display: flex;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    
+}
+#content
+{
+    
+    height: 200px;
+    width: 500px;
+    margin-right: 50px;
+    text-align: center;
+    
+}
+#content-image
+{
+    background-image: url("main-image.jpg");
+  background-size: cover; 
+  background-repeat: no-repeat; 
+  background-position: center;
+  height: 50px;
+    height: 500px;
+    width: 500px;
+    border-radius: 15px;
+    box-shadow: 0 10px 10px rgba(108, 85, 214, 0.12), 0 10px 10px rgba(108, 85, 214, 0.12);
+
+}
+#next
+{
+    height: 50px;
+    width: 250px;
+    margin-left: 125px;
+    display: flex;
+     justify-items: center;
+    justify-content: center;
+    align-items: center;
+}
+.nextstep
+{
+    height: 30px;
+    width: 95px;
+    background-color: rgb(37, 63, 102);
+    border-radius: 10px;
+    text-align: center;
+    color: rgb(255, 255, 255);
+  transition: 0.3s;
+}
+#login:hover
+{
+  transform: rotateX(10deg);
+    box-shadow:  5px 0px #ccc, 
+    0px 10px 20px rgba(0, 0, 0, 0.4);
+    transform: rotateX(0deg) rotateY(0deg) translateY(-10px);
+}
+#login
+{
+    margin-right: 20px;
+}
+#register:hover
+{
+    transform: rotateX(10deg);
+    box-shadow:  5px 0px #ccc, 
+    0px 10px 20px rgba(0, 0, 0, 0.4); /* The main soft shadow  */
+    transform: rotateX(0deg) rotateY(0deg) translateY(-10px);
+}

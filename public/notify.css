@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f4f6f9;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background: white;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+}
+
+.profile {
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Layout */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Form Section */
+.form-section {
+    width: 420px;
+}
+
+.form-section h2 {
+    margin-bottom: 20px;
+    margin-left: 90px;
+    font-size: 30px;
+    text-align: center;
+    width: 600px;
+}
+
+.form-box {
+    background: #e9edf2;
+    padding: 30px;
+    border-radius: 20px;
+}
+
+/* Input Styling */
+.input-group {
+    display: flex;
+    align-items: center;
+    background: white;
+    padding: 12px 18px;
+    border-radius: 25px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.input-group span {
+    margin-right: 12px;
+    font-size: 16px;
+}
+
+.input-group input {
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 15px;
+}
+
+/* Buttons */
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.cancel-btn,
+.send-btn {
+    padding: 12px 22px;
+    border: none;
+    border-radius: 25px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.cancel-btn {
+    background: linear-gradient(to right, #6dd5ed, #2193b0);
+}
+
+.send-btn {
+    background: linear-gradient(to right, #6dd5ed, #1e5799);
+}
+
+.cancel-btn:hover,
+.send-btn:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+/* Image Section */
+.image-section img {
+    width: 380px;
+    height: 100%;
+    margin-top: 40px;
+    border-radius: 15px;
+}
+
+/* Hover */
+a:hover {
+    color: #1e5799;
+}
+#image_container
+{
+    background-image: url(library-pic.jpeg);
+}
